@@ -1,424 +1,247 @@
-export default function AlphapointeVisionServices() {
-  return (
-    <div className="min-h-screen bg-white text-[color:var(--ap-ink)]">
-      {/* Head-like metadata (for Next.js, move into <Head>) */}
-      <title>Alphapointe Vision Services | Low Vision Care, Rehab, Referrals</title>
-      <meta name="description" content="Learn about Alphapointe's full spectrum of vision services in Kansas City—Low Vision Clinic, Orientation & Mobility, Adaptive Technology, ADL training, Braille, Support Groups, Youth Camps, and the Connecting Pointe adaptive store. Clinicians can refer via VisionRefer, fax, or phone." />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alphapointe Vision Services | Low Vision Care, Rehab, Referrals</title>
+  <meta name="description" content="Learn about Alphapointe's full spectrum of vision services in Kansas City—Low Vision Clinic, Orientation & Mobility, Adaptive Technology, ADL training, Braille, and more." />
+  <style>
+    :root{--ap-primary:#007a6f;--ap-accent:#ff9f1c;--ap-ink:#0f172a;--ap-body:#475569;--ap-tint:#f0fdfa;--ap-border:#e2e8f0}
+    body { background: #fff; color: var(--ap-ink); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+    a:hover { color: var(--ap-primary); }
+    /* Add your additional CSS here, or move your full styles into a separate file */
+  </style>
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Alphapointe",
+    "url": "https://www.alphapointe.org",
+    "sameAs": [
+      "https://www.facebook.com/Alphapointe/",
+      "https://twitter.com/Alphapointe",
+      "https://www.instagram.com/alphapointe/"
+    ],
+    "department": {
+      "@type": "MedicalClinic",
+      "name": "Alphapointe Low Vision Clinic",
+      "url": "https://www.alphapointe.org/vision-services/low-vision-clinic/",
+      "telephone": "+1-816-237-2020",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7501 Prospect",
+        "addressLocality": "Kansas City",
+        "addressRegion": "MO",
+        "postalCode": "64132",
+        "addressCountry": "US"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.left='2px';this.style.top='2px';this.style.zIndex='50';this.style.background='black';this.style.color='white';this.style.padding='8px';this.style.borderRadius='8px';">Skip to content</a>
 
-      <style>{`
-        :root{--ap-primary:#007a6f;--ap-accent:#ff9f1c;--ap-ink:#0f172a;--ap-body:#475569;--ap-tint:#f0fdfa;--ap-border:#e2e8f0}
-        a:hover{color:var(--ap-primary)}
-      `}</style>
-
-      {/* JSON-LD: Organization + LocalBusiness (clinic) + OfferCatalog + FAQPage (hub-level) */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        name: 'Alphapointe',
-        url: 'https://www.alphapointe.org',
-        sameAs: [
-          'https://www.facebook.com/Alphapointe/',
-          'https://twitter.com/Alphapointe',
-          'https://www.instagram.com/alphapointe/'
-        ],
-        department: {
-          '@type': 'MedicalClinic',
-          name: 'Alphapointe Low Vision Clinic',
-          url: 'https://www.alphapointe.org/vision-services/low-vision-clinic/',
-          telephone: '+1-816-237-2020',
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: '7501 Prospect',
-            addressLocality: 'Kansas City',
-            addressRegion: 'MO',
-            postalCode: '64132',
-            addressCountry: 'US'
-          }
-        },
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Vision Services',
-          itemListElement: [
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Low Vision Clinic', url: '#low-vision' } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Orientation & Mobility', url: '#om' } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Adaptive Technology Training', url: '#adaptive-tech' } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Activities of Daily Living (ADL) Training', url: '#adl' } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Braille Reading & Writing', url: '#braille' } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Support Groups', url: '#support-groups' } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Youth Events & Camps', url: '#youth' } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Connecting Pointe Adaptive Store', url: '#store' } }
-          ]
-        }
-      }) }} />
-
-      {/* Top notification / accessibility skip link */}
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-black text-white px-3 py-2 rounded-md">Skip to content</a>
-
-      {/* Header (styled to echo Alphapointe structure without copying) */}
-      <header className="border-b border-[color:var(--ap-border)]">
-        <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="inline-block h-8 w-8 rounded bg-[var(--ap-primary)]" aria-hidden />
-            <span className="font-semibold tracking-tight">Alphapointe</span>
-          </div>
-          <nav aria-label="Primary" className="hidden md:flex items-center gap-6 text-sm">
-            <a className="hover:underline" href="#services">Vision Services</a>
-            <a className="hover:underline" href="#refer">Refer a Patient</a>
-            <a className="hover:underline" href="#locations">Locations</a>
-            <a className="hover:underline" href="#store">Connecting Pointe Store</a>
-            <a className="hover:underline" href="#faq">FAQ</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <a href="tel:+18162372020" className="inline-flex items-center rounded-2xl border border-[color:var(--ap-border)] px-3 py-2 text-sm">Call 816‑237‑2020</a>
-            <a href="#refer" className="inline-flex items-center rounded-2xl bg-[var(--ap-primary)] text-white px-3 py-2 text-sm">Refer a Patient</a>
-          </div>
-        </div>
-      </header>
-
-      {/* Hero */}
-      <section id="hero" className="bg-[var(--ap-tint)]">
-        <div className="mx-auto max-w-6xl px-4 py-14 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h1 className="text-3xl md:text-5xl font-semibold leading-tight tracking-tight">Vision Services that restore confidence and independence.</h1>
-            <p className="mt-4 text-[color:var(--ap-body)] text-lg">When glasses, contacts, surgery, or treatments aren’t enough, Alphapointe teaches the skills and tools to live independently—at home, work, school, and in the community.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#low-vision" className="rounded-2xl bg-[var(--ap-primary)] text-white px-5 py-3 text-sm">Explore Services</a>
-              <a href="#refer" className="rounded-2xl border border-[color:var(--ap-border)] px-5 py-3 text-sm">Clinician Referrals</a>
-            </div>
-          </div>
-          <img src="https://images.unsplash.com/photo-1505575972945-280e29dfe3f1?q=80&w=1600&auto=format&fit=crop" alt="Person using a handheld magnifier with strong contrast lighting" className="w-full aspect-[4/3] object-cover rounded-3xl ring-1 ring-[color:var(--ap-border)]"/>
-          <div className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-            <h2 className="text-xl font-semibold">Is this you?</h2>
-            <ul className="mt-3 space-y-2 text-sm text-[color:var(--ap-body)] list-disc pl-5">
-              <li>20/40 or worse in the better eye (with correction)</li>
-              <li>Difficulty reading, using a phone, or watching TV</li>
-              <li>Scotoma (blind spot) or peripheral vision loss</li>
-              <li>Reduced contrast sensitivity</li>
-              <li>Difficulty adjusting to recent vision changes</li>
-            </ul>
-            <div className="mt-4 flex gap-3">
-              <a href="#contact" className="rounded-xl bg-[var(--ap-primary)] text-white px-4 py-2 text-sm">Request an Appointment</a>
-              <a href="#locations" className="rounded-xl border border-[color:var(--ap-border)] px-4 py-2 text-sm">Find a Location</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <main id="main">
-        <section id="services" className="mx-auto max-w-6xl px-4 py-12">
-          <h2 className="text-2xl md:text-3xl font-semibold">What we do</h2>
-          <p className="mt-2 text-[color:var(--ap-body)]">A full spectrum of rehabilitation and training services—delivered by specialists who focus on practical, real‑life outcomes.</p>
-
-          <div className="mt-8 grid md:grid-cols-2 gap-6">
-            {/* Low Vision Clinic */}
-            <article id="low-vision" className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-              <img src="https://alphapointe.org/wp-content/uploads/2024/11/Low-vision-scaled.jpg" alt="Low vision evaluation with magnifiers and task lighting" className="w-full aspect-[16/9] object-cover rounded-2xl ring-1 ring-[color:var(--ap-border)] mb-4"/>
-              <h3 className="text-xl font-semibold">Low Vision Clinic</h3>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Assessment, devices, and training when medical treatments and standard eyewear are no longer enough. Expect tailored strategies for contrast, lighting, organization, and the right magnification tools.</p>
-              <ul className="mt-3 text-sm list-disc pl-5 text-[color:var(--ap-body)]">
-                <li>Visual aids: magnifiers, telescopes/binoculars, task lighting</li>
-                <li>Rehabilitation strategies: contrast, lighting, organization</li>
-                <li>Home accommodations for daily tasks</li>
-              </ul>
-              <div className="mt-4"><a href="#refer" className="text-sm underline">Refer a patient</a></div>
-            </article>
-
-            {/* Orientation & Mobility */}
-            <article id="om" className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-              <img src="https://alphapointe.org/wp-content/uploads/2024/11/Alyssa.jpg" alt="Orientation and mobility specialist with client during training" className="w-full aspect-[16/9] object-cover rounded-2xl ring-1 ring-[color:var(--ap-border)] mb-4"/>
-              <h3 className="text-xl font-semibold">Orientation &amp; Mobility</h3>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Training to move confidently indoors and outdoors—at crossings, on sidewalks, in stores, and on public transit.</p>
-              <ul className="mt-3 text-sm list-disc pl-5 text-[color:var(--ap-body)]">
-                <li>Cane technique, orientation & mental mapping</li>
-                <li>Curb alignment and using traffic sounds safely</li>
-                <li>Grocery shopping and public transit navigation</li>
-              </ul>
-            </article>
-
-            {/* Adaptive Technology */}
-            <article id="adaptive-tech" className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-              <img src="https://alphapointe.org/wp-content/uploads/2024/03/NYC-Computer-scaled.jpg" alt="Adaptive technology training: large-print keyboard and high-contrast screen" className="w-full aspect-[16/9] object-cover rounded-2xl ring-1 ring-[color:var(--ap-border)] mb-4"/>
-              <h3 className="text-xl font-semibold">Adaptive Technology Training</h3>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Accessible tech for school, work, and home—from screen readers and magnifiers to keyboard shortcuts and smartphone gestures/voice.</p>
-              <ul className="mt-3 text-sm list-disc pl-5 text-[color:var(--ap-body)]">
-                <li>Web browsing with screen readers/magnification</li>
-                <li>Email & word processing; keyboarding</li>
-                <li>Mobile accessibility: gestures, voice assistants</li>
-              </ul>
-            </article>
-
-            {/* ADL */}
-            <article id="adl" className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-              <img src="https://alphapointe.org/wp-content/uploads/2024/11/senior.jpeg" alt="Activities of daily living training for seniors at Alphapointe" className="w-full aspect-[16/9] object-cover rounded-2xl ring-1 ring-[color:var(--ap-border)] mb-4"/>
-              <h3 className="text-xl font-semibold">Activities of Daily Living (ADL)</h3>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Skills and systems for independence at home.</p>
-              <ul className="mt-3 text-sm list-disc pl-5 text-[color:var(--ap-body)]">
-                <li>Kitchen safety and meal prep</li>
-                <li>Money management and accessible banking</li>
-                <li>Hygiene, dressing systems, labeling & color ID</li>
-              </ul>
-            </article>
-
-            {/* Braille */}
-            <article id="braille" className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-              <img src="https://alphapointe.org/wp-content/uploads/2024/11/Emily.jpg" alt="Braille instruction session at Alphapointe (illustrative)" className="w-full aspect-[16/9] object-cover rounded-2xl ring-1 ring-[color:var(--ap-border)] mb-4"/>
-              <h3 className="text-xl font-semibold">Braille Reading & Writing</h3>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Foundations of the Braille code, tracking lines, and writing tools.</p>
-              <ul className="mt-3 text-sm list-disc pl-5 text-[color:var(--ap-body)]">
-                <li>Letter/symbol identification and rules of the code</li>
-                <li>Line tracking techniques</li>
-                <li>Slate & stylus / digital Braille tools</li>
-              </ul>
-            </article>
-
-            {/* Support Groups */}
-            <article id="support-groups" className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-              <img src="https://alphapointe.org/wp-content/uploads/2024/11/senior.jpeg" alt="Support group with friendly discussion (Alphapointe)" className="w-full aspect-[16/9] object-cover rounded-2xl ring-1 ring-[color:var(--ap-border)] mb-4"/>
-              <h3 className="text-xl font-semibold">Support Groups & Free Classes</h3>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Peer connection plus practical classes in Braille, adaptive tech, O&M, and ADL skills.</p>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Call to register and check the events calendar.</p>
-            </article>
-
-            {/* Youth */}
-            <article id="youth" className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-              <img src="https://alphapointe.org/wp-content/uploads/2024/11/Technology-camp-scaled.jpg" alt="Alphapointe Technology Camp with youth learning adaptive tech" className="w-full aspect-[16/9] object-cover rounded-2xl ring-1 ring-[color:var(--ap-border)] mb-4"/>
-              <h3 className="text-xl font-semibold">Youth Events & Camps</h3>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Adventure & Technology Camps, College Prep, and S.T.E.P. summer work experiences build confidence and real‑world skills.</p>
-            </article>
-
-            {/* Store */}
-            <article id="store" className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-              <img src="https://alphapointe.org/wp-content/uploads/2024/11/NYC-Computer-scaled.jpg" alt="Adaptive products at the Connecting Pointe store" className="w-full aspect-[16/9] object-cover rounded-2xl ring-1 ring-[color:var(--ap-border)] mb-4"/>
-              <h3 className="text-xl font-semibold">Connecting Pointe Adaptive Store</h3>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Try magnifiers, talking devices, Braille tools, mobility aids—and get free cane repair.</p>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">To visit, call <a className="underline" href="tel:+18162372040">816‑237‑2040</a> for an appointment.</p>
-            </article>
-          </div>
-        </section>
-
-        {/* Team */}
-        <section id="team" className="bg-[var(--ap-tint)]">
-          <div className="mx-auto max-w-6xl px-4 py-12">
-            <h2 className="text-2xl md:text-3xl font-semibold">Our Vision Clinic Team</h2>
-            <p className="mt-2 text-[color:var(--ap-body)]">Meet the doctors and rehabilitation specialists who deliver comprehensive low vision care, training, and support.</p>
-            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {/* Dr. Cal Wiese */}
-              <article className="rounded-3xl border border-[color:var(--ap-border)] bg-white shadow-sm overflow-hidden">
-                <img src="https://alphapointe.org/wp-content/uploads/2024/11/Dr.-Wiese-1024x683.jpg" alt="Dr. Cal Wiese" className="w-full aspect-[4/3] object-cover"/>
-                <div className="p-5">
-                  <h3 className="font-semibold">Dr. Cal Wiese</h3>
-                  <p className="text-sm text-[color:var(--ap-body)]">Low Vision Optometrist</p>
-                </div>
-              </article>
-
-              {/* Dr. Emily Kyle */}
-              <article className="rounded-3xl border border-[color:var(--ap-border)] bg-white shadow-sm overflow-hidden">
-                <img src="https://www.alphapointe.org/wp-content/uploads/2025/08/Dr.-Emily-Kyle.jpg" alt="Dr. Emily Kyle" className="w-full aspect-[4/3] object-cover"/>
-                <div className="p-5">
-                  <h3 className="font-semibold">Dr. Emily Kyle</h3>
-                  <p className="text-sm text-[color:var(--ap-body)]">Optometrist</p>
-                </div>
-              </article>
-
-              {/* Shannon Fugate, MOT, OTR/L */}
-              <article className="rounded-3xl border border-[color:var(--ap-border)] bg-white shadow-sm overflow-hidden">
-                <img src="https://alphapointe.org/wp-content/uploads/2024/08/Shannon-Fugate-1024x765.jpg" alt="Shannon Fugate, MOT, OTR/L" className="w-full aspect-[4/3] object-cover"/>
-                <div className="p-5">
-                  <h3 className="font-semibold">Shannon Fugate, MOT, OTR/L</h3>
-                  <p className="text-sm text-[color:var(--ap-body)]">Occupational Therapist</p>
-                </div>
-              </article>
-
-              {/* Becky Dumsky, COTA/L */}
-              <article className="rounded-3xl border border-[color:var(--ap-border)] bg-white shadow-sm overflow-hidden">
-                <img src="https://alphapointe.org/wp-content/uploads/2024/08/Becky-Dumsky-1536x1123.jpg" alt="Becky Dumsky, COTA/L" className="w-full aspect-[4/3] object-cover"/>
-                <div className="p-5">
-                  <h3 className="font-semibold">Becky Dumsky, COTA/L</h3>
-                  <p className="text-sm text-[color:var(--ap-body)]">Certified Occupational Therapy Assistant</p>
-                </div>
-              </article>
-
-              {/* Amber Hagge, COTA/L */}
-              <article className="rounded-3xl border border-[color:var(--ap-border)] bg-white shadow-sm overflow-hidden">
-                <img src="https://alphapointe.org/wp-content/uploads/2024/11/Amber.jpg" alt="Amber Hagge, COTA/L" className="w-full aspect-[4/3] object-cover"/>
-                <div className="p-5">
-                  <h3 className="font-semibold">Amber Hagge, COTA/L</h3>
-                  <p className="text-sm text-[color:var(--ap-body)]">Certified Occupational Therapy Assistant</p>
-                </div>
-              </article>
-
-              {/* Emily Haapala, CVRT/O&M */}
-              <article className="rounded-3xl border border-[color:var(--ap-border)] bg-white shadow-sm overflow-hidden">
-                <img src="https://alphapointe.org/wp-content/uploads/2024/11/Emily.jpg" alt="Emily Haapala, CVRT/O&M" className="w-full aspect-[4/3] object-cover"/>
-                <div className="p-5">
-                  <h3 className="font-semibold">Emily Haapala, CVRT / O&M</h3>
-                  <p className="text-sm text-[color:var(--ap-body)]">Vision Rehabilitation Therapist & Orientation & Mobility Specialist</p>
-                </div>
-              </article>
-
-              {/* Lynda Hansen, O&M */}
-              <article className="rounded-3xl border border-[color:var(--ap-border)] bg-white shadow-sm overflow-hidden">
-                <img src="https://www.alphapointe.org/wp-content/uploads/2025/08/Lynda-Hansen.jpg" alt="Lynda Hansen, Orientation & Mobility Specialist" className="w-full aspect-[4/3] object-cover"/>
-                <div className="p-5">
-                  <h3 className="font-semibold">Lynda Hansen</h3>
-                  <p className="text-sm text-[color:var(--ap-body)]">Orientation & Mobility Specialist</p>
-                </div>
-              </article>
-
-              {/* Mandy Myers, ADL Instructor */}
-              <article className="rounded-3xl border border-[color:var(--ap-border)] bg-white shadow-sm overflow-hidden">
-                <img src="https://www.alphapointe.org/wp-content/uploads/2025/08/Mandy-1024x699.jpg" alt="Mandy Myers, Activities of Daily Living Instructor" className="w-full aspect-[4/3] object-cover"/>
-                <div className="p-5">
-                  <h3 className="font-semibold">Mandy Myers</h3>
-                  <p className="text-sm text-[color:var(--ap-body)]">Activities of Daily Living Instructor</p>
-                </div>
-              </article>
-
-              {/* Julie Burbach, Vision Therapist */}
-              <article className="rounded-3xl border border-[color:var(--ap-border)] bg-white shadow-sm overflow-hidden">
-                <img src="https://www.alphapointe.org/wp-content/uploads/2025/07/06.28.25-Burbach-36-A-2-1018x1024.jpg" alt="Julie Burbach, Vision Therapist" className="w-full aspect-[4/3] object-cover"/>
-                <div className="p-5">
-                  <h3 className="font-semibold">Julie Burbach</h3>
-                  <p className="text-sm text-[color:var(--ap-body)]">Vision Therapist</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        {/* Referral panel */}
-        <section id="refer" className="bg-[var(--ap-tint)]">
-          <div className="mx-auto max-w-6xl px-4 py-12">
-            <div className="rounded-3xl border border-[color:var(--ap-border)] bg-white p-6 shadow-sm">
-              <h2 className="text-2xl font-semibold">Referrals for Clinicians & Caregivers</h2>
-              <p className="mt-2 text-[color:var(--ap-body)]">Use our secure online portal or send referrals by fax or phone. Include demographics, insurance, and the most recent exam note.</p>
-              <div className="mt-4 grid md:grid-cols-3 gap-4 text-sm">
-                <a className="rounded-2xl bg-[var(--ap-primary)] text-white px-4 py-3 text-center" href="https://visionrefer.org/" target="_blank" rel="noopener noreferrer">VisionRefer (Secure)</a>
-                <a className="rounded-2xl border border-[color:var(--ap-border)] px-4 py-3 text-center" href="tel:+18162372020">Call 816‑237‑2020</a>
-                <a className="rounded-2xl border border-[color:var(--ap-border)] px-4 py-3 text-center" href="fax:+18162372065">Fax 816‑237‑2065</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Locations */}
-        <section id="locations" className="mx-auto max-w-6xl px-4 py-12">
-          <div className="mt-2 grid grid-cols-3 gap-3" aria-hidden>
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="" className="w-full aspect-[3/2] object-cover rounded-xl ring-1 ring-[color:var(--ap-border)]"/>
-            <img src="https://images.unsplash.com/photo-1520974735194-8d95a2490f3e?q=80&w=1600&auto=format&fit=crop" alt="" className="w-full aspect-[3/2] object-cover rounded-xl ring-1 ring-[color:var(--ap-border)]"/>
-            <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=1600&auto=format&fit=crop" alt="" className="w-full aspect-[3/2] object-cover rounded-xl ring-1 ring-[color:var(--ap-border)]"/>
-          </div>
-          <h2 className="text-2xl md:text-3xl font-semibold">Locations</h2>
-          <div className="mt-6 grid md:grid-cols-2 gap-6">
-            <div className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-              <h3 className="text-lg font-semibold">Alphapointe Low Vision Clinic (Kansas City)</h3>
-              <p className="mt-1 text-sm text-[color:var(--ap-body)]">7501 Prospect, Kansas City, MO 64132</p>
-              <p className="text-sm text-[color:var(--ap-body)]">Appointments: <a className="underline" href="tel:+18162372020">816‑237‑2020</a></p>
-              <div className="mt-3 flex gap-3 text-sm">
-                <a className="rounded-xl border border-[color:var(--ap-border)] px-3 py-2" href="https://maps.google.com/?q=7501+Prospect+Kansas+City+MO+64132" target="_blank" rel="noopener noreferrer">Map</a>
-                <a className="rounded-xl border border-[color:var(--ap-border)] px-3 py-2" href="#contact">Contact</a>
-              </div>
-            </div>
-            <div className="rounded-3xl border border-[color:var(--ap-border)] p-6 bg-white shadow-sm">
-              <h3 className="text-lg font-semibold">KC Vision Performance (Overland Park)</h3>
-              <p className="mt-1 text-sm text-[color:var(--ap-body)]">Operated by Alphapointe — comprehensive optometric & neuro‑optometric services.</p>
-              <div className="mt-3 flex gap-3 text-sm">
-                <a className="rounded-xl border border-[color:var(--ap-border)] px-3 py-2" href="https://kcvisionperformance.com/" target="_blank" rel="noopener noreferrer">Visit Site</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact */}
-        <section id="contact" className="bg-[var(--ap-tint)]">
-          <div className="mx-auto max-w-6xl px-4 py-12">
-            <div className="rounded-3xl border border-[color:var(--ap-border)] bg-white p-6 shadow-sm">
-              <h2 className="text-2xl font-semibold">Request an Appointment</h2>
-              <p className="mt-2 text-[color:var(--ap-body)] text-sm">Call <a className="underline" href="tel:+18162372020">816‑237‑2020</a> or send a message below. Our team will help you choose services and next steps.</p>
-              <form className="mt-6 grid gap-4 md:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
-                <label className="text-sm">Full Name<input required className="mt-1 w-full rounded-xl border border-[color:var(--ap-border)] px-3 py-2" placeholder="Your name"/></label>
-                <label className="text-sm">Phone<input required className="mt-1 w-full rounded-xl border border-[color:var(--ap-border)] px-3 py-2" placeholder="(###) ###‑####"/></label>
-                <label className="text-sm md:col-span-2">Email<input className="mt-1 w-full rounded-xl border border-[color:var(--ap-border)] px-3 py-2" placeholder="you@example.com"/></label>
-                <label className="text-sm md:col-span-2">How can we help?<textarea className="mt-1 w-full rounded-xl border border-[color:var(--ap-border)] px-3 py-2" rows={4} placeholder="Tell us about your goals or challenges"/></label>
-                <div className="md:col-span-2 flex items-center gap-3">
-                  <button className="rounded-2xl bg-[var(--ap-primary)] text-white px-5 py-3 text-sm" type="submit">Send</button>
-                  <p className="text-xs text-zinc-600">Submitting this form does not share medical records. For referrals, please use VisionRefer or fax.</p>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section id="faq" className="mx-auto max-w-6xl px-4 py-12">
-          <h2 className="text-2xl md:text-3xl font-semibold">Frequently Asked Questions</h2>
-          <div className="mt-6 grid md:grid-cols-2 gap-6">
-            <details className="rounded-2xl border border-[color:var(--ap-border)] p-5 bg-white shadow-sm">
-              <summary className="font-medium">What is low vision rehabilitation?</summary>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">A personalized plan combining devices (like magnifiers) and training (like improved lighting and contrast) to help you do everyday tasks more independently.</p>
-            </details>
-            <details className="rounded-2xl border border-[color:var(--ap-border)] p-5 bg-white shadow-sm">
-              <summary className="font-medium">Who qualifies for a low vision evaluation?</summary>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">People with 20/40 vision or worse in the better eye (with correction) or anyone struggling with daily visual tasks, contrast, scotomas, or peripheral loss.</p>
-            </details>
-            <details className="rounded-2xl border border-[color:var(--ap-border)] p-5 bg-white shadow-sm">
-              <summary className="font-medium">How do I refer a patient?</summary>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Use VisionRefer for secure online referral, or send via fax to 816‑237‑2065. You can also call 816‑237‑2020 for assistance.</p>
-            </details>
-            <details className="rounded-2xl border border-[color:var(--ap-border)] p-5 bg-white shadow-sm">
-              <summary className="font-medium">Can I try devices before buying?</summary>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Yes. Visit the Connecting Pointe store to test adaptive products and get free cane repair. Call 816‑237‑2040 for an appointment.</p>
-            </details>
-            <details className="rounded-2xl border border-[color:var(--ap-border)] p-5 bg-white shadow-sm md:col-span-2">
-              <summary className="font-medium">Where are services available?</summary>
-              <p className="mt-2 text-sm text-[color:var(--ap-body)]">Kansas City (Low Vision Clinic, 7501 Prospect). KC Vision Performance (Overland Park) provides comprehensive optometric and neuro‑optometric services operated by Alphapointe.</p>
-            </details>
-          </div>
-
-          {/* FAQ JSON-LD */}
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: [
-              { '@type': 'Question', name: 'What is low vision rehabilitation?', acceptedAnswer: { '@type': 'Answer', text: 'A personalized plan combining devices (like magnifiers) and training (like improved lighting and contrast) to help you do everyday tasks more independently.' } },
-              { '@type': 'Question', name: 'Who qualifies for a low vision evaluation?', acceptedAnswer: { '@type': 'Answer', text: 'People with 20/40 vision or worse in the better eye (with correction) or anyone struggling with daily visual tasks, contrast, scotomas, or peripheral loss.' } },
-              { '@type': 'Question', name: 'How do I refer a patient?', acceptedAnswer: { '@type': 'Answer', text: 'Use VisionRefer for secure online referral, or send via fax to 816-237-2065. You can also call 816-237-2020 for assistance.' } },
-              { '@type': 'Question', name: 'Can I try devices before buying?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Visit the Connecting Pointe store to test adaptive products and get free cane repair. Call 816-237-2040 for an appointment.' } },
-              { '@type': 'Question', name: 'Where are services available?', acceptedAnswer: { '@type': 'Answer', text: 'Kansas City (Low Vision Clinic, 7501 Prospect). KC Vision Performance (Overland Park) provides comprehensive optometric and neuro-optometric services operated by Alphapointe.' } }
-            ]
-          }) }} />
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[color:var(--ap-border)]">
-        <div className="mx-auto max-w-6xl px-4 py-10 grid md:grid-cols-3 gap-6 text-sm">
-          <div>
-            <p className="font-semibold">Alphapointe</p>
-            <p className="mt-2 text-[color:var(--ap-body)]">Empowering people with vision loss to achieve their goals and live independently.</p>
-          </div>
-          <div>
-            <p className="font-semibold">Contact</p>
-            <ul className="mt-2 space-y-1 text-[color:var(--ap-body)]">
-              <li>Kansas City Clinic — 7501 Prospect, Kansas City, MO 64132</li>
-              <li>Appointments: <a className="underline" href="tel:+18162372020">816‑237‑2020</a></li>
-              <li>Fax: <a className="underline" href="fax:+18162372065">816‑237‑2065</a></li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold">Quick links</p>
-            <ul className="mt-2 space-y-1 text-[color:var(--ap-body)]">
-              <li><a className="underline" href="#refer">VisionRefer / Referrals</a></li>
-              <li><a className="underline" href="#store">Connecting Pointe Store</a></li>
-              <li><a className="underline" href="#support-groups">Support Groups</a></li>
-              <li><a className="underline" href="#youth">Youth Events & Camps</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="text-center text-xs text-zinc-500 pb-8">© {new Date().getFullYear()} Alphapointe — For demonstration build purposes.</div>
-      </footer>
+  <header style="border-bottom:1px solid var(--ap-border);padding:16px;">
+    <div style="max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span style="display:inline-block;height:32px;width:32px;border-radius:50%;background:var(--ap-primary);" aria-hidden="true"></span>
+        <span style="font-weight:bold;">Alphapointe</span>
+      </div>
+      <nav aria-label="Primary" style="display:flex;gap:20px;font-size:15px;">
+        <a href="#services">Vision Services</a>
+        <a href="#refer">Refer a Patient</a>
+        <a href="#locations">Locations</a>
+        <a href="#store">Connecting Pointe Store</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <a href="tel:+18162372020" style="border-radius:16px;border:1px solid var(--ap-border);padding:8px 16px;font-size:15px;">Call 816‑237‑2020</a>
+        <a href="#refer" style="border-radius:16px;background:var(--ap-primary);color:white;padding:8px 16px;font-size:15px;">Refer a Patient</a>
+      </div>
     </div>
-  );
-}
+  </header>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section id="hero" style="background:var(--ap-tint);padding:48px 0;">
+      <div style="max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+        <div>
+          <h1 style="font-size:2.6em;font-weight:600;">Vision Services that restore confidence and independence.</h1>
+          <p style="margin-top:16px;color:var(--ap-body);font-size:1.1em;">When glasses, contacts, surgery, or treatments aren’t enough, Alphapointe teaches the skills and tools to live independently.</p>
+          <div style="margin-top:24px;display:flex;gap:12px;">
+            <a href="#low-vision" style="border-radius:16px;background:var(--ap-primary);color:white;padding:12px 24px;font-size:15px;text-decoration:none;">Explore Services</a>
+            <a href="#refer" style="border-radius:16px;border:1px solid var(--ap-border);padding:12px 24px;font-size:15px;text-decoration:none;">Clinician Referrals</a>
+          </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1505575972945-280e29dfe3f1?q=80&w=1600&auto=format&fit=crop" alt="Person using a handheld magnifier with strong contrast lighting" style="width:100%;border-radius:24px;object-fit:cover;" />
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" style="max-width:1100px;margin:auto;padding:48px 0;">
+      <h2 style="font-size:2em;font-weight:600;">What we do</h2>
+      <p style="margin-top:8px;color:var(--ap-body);">A full spectrum of rehabilitation and training services—delivered by specialists who focus on practical, real‑life outcomes.</p>
+      <div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
+        <!-- Repeat these blocks for each service -->
+        <div style="border-radius:24px;border:1px solid var(--ap-border);padding:24px;background:white;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+          <img src="https://alphapointe.org/wp-content/uploads/2024/11/Low-vision-scaled.jpg" alt="Low vision evaluation with magnifiers and task lighting" style="width:100%;border-radius:16px;" />
+          <h3 style="font-size:1.3em;font-weight:600;">Low Vision Clinic</h3>
+          <p style="margin-top:8px;color:var(--ap-body);font-size:1em;">Assessment, devices, and training when medical treatments and standard eyewear are no longer enough.</p>
+          <ul style="margin-top:8px;color:var(--ap-body);font-size:0.97em;">
+            <li>Visual aids: magnifiers, telescopes/binoculars, task lighting</li>
+            <li>Rehabilitation strategies: contrast, lighting, organization</li>
+            <li>Home accommodations for daily tasks</li>
+          </ul>
+          <div style="margin-top:12px;"><a href="#refer" style="text-decoration:underline;">Refer a patient</a></div>
+        </div>
+        <!-- Add more service blocks as needed -->
+      </div>
+    </section>
+
+    <!-- Referral Section -->
+    <section id="refer" style="background:var(--ap-tint);padding:48px 0;">
+      <div style="max-width:1100px;margin:auto;">
+        <div style="border-radius:24px;border:1px solid var(--ap-border);background:white;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+          <h2 style="font-size:2em;font-weight:600;">Referrals for Clinicians & Caregivers</h2>
+          <p style="margin-top:8px;color:var(--ap-body);">Use our secure online portal or send referrals by fax or phone. Include demographics, insurance, and the most recent exam note.</p>
+          <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:16px;">
+            <a style="border-radius:16px;background:var(--ap-primary);color:white;padding:16px 24px;text-align:center;text-decoration:none;" href="https://visionrefer.org/" target="_blank" rel="noopener">VisionRefer (Secure)</a>
+            <a style="border-radius:16px;border:1px solid var(--ap-border);padding:16px 24px;text-align:center;text-decoration:none;" href="tel:+18162372020">Call 816‑237‑2020</a>
+            <a style="border-radius:16px;border:1px solid var(--ap-border);padding:16px 24px;text-align:center;text-decoration:none;" href="fax:+18162372065">Fax 816‑237‑2065</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" style="max-width:1100px;margin:auto;padding:48px 0;">
+      <h2 style="font-size:2em;font-weight:600;">Locations</h2>
+      <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
+        <div style="border-radius:24px;border:1px solid var(--ap-border);padding:24px;background:white;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+          <h3 style="font-size:1.15em;font-weight:600;">Alphapointe Low Vision Clinic (Kansas City)</h3>
+          <p style="color:var(--ap-body);font-size:0.97em;">7501 Prospect, Kansas City, MO 64132</p>
+          <p style="color:var(--ap-body);">Appointments: <a href="tel:+18162372020" style="text-decoration:underline;">816‑237‑2020</a></p>
+          <div style="margin-top:12px;display:flex;gap:12px;">
+            <a style="border-radius:12px;border:1px solid var(--ap-border);padding:8px 14px;text-decoration:none;" href="https://maps.google.com/?q=7501+Prospect+Kansas+City+MO+64132" target="_blank" rel="noopener">Get Directions</a>
+            <a style="border-radius:12px;border:1px solid var(--ap-border);padding:8px 14px;text-decoration:none;" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div style="border-radius:24px;border:1px solid var(--ap-border);padding:24px;background:white;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+          <h3 style="font-size:1.15em;font-weight:600;">KC Vision Performance (Overland Park)</h3>
+          <p style="color:var(--ap-body);font-size:0.97em;">Operated by Alphapointe — comprehensive optometric & neuro‑optometric services.</p>
+          <div style="margin-top:12px;">
+            <a style="border-radius:12px;border:1px solid var(--ap-border);padding:8px 14px;text-decoration:none;" href="https://kcvisionperformance.com/" target="_blank" rel="noopener">Visit Site</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="max-width:1100px;margin:auto;padding:48px 0;">
+      <h2 style="font-size:2em;font-weight:600;">Frequently Asked Questions</h2>
+      <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+        <details style="border-radius:16px;border:1px solid var(--ap-border);padding:16px;background:white;">
+          <summary style="font-weight:500;">What is low vision rehabilitation?</summary>
+          <p style="margin-top:8px;color:var(--ap-body);font-size:1em;">A personalized plan combining devices (like magnifiers) and training (like improved lighting and contrast) to help you do everyday tasks independently.</p>
+        </details>
+        <details style="border-radius:16px;border:1px solid var(--ap-border);padding:16px;background:white;">
+          <summary style="font-weight:500;">Who qualifies for a low vision evaluation?</summary>
+          <p style="margin-top:8px;color:var(--ap-body);font-size:1em;">People with 20/40 vision or worse in the better eye (with correction) or anyone struggling with daily visual tasks, contrast, or adjusting to recent vision changes.</p>
+        </details>
+        <details style="border-radius:16px;border:1px solid var(--ap-border);padding:16px;background:white;">
+          <summary style="font-weight:500;">How do I refer a patient?</summary>
+          <p style="margin-top:8px;color:var(--ap-body);font-size:1em;">Use VisionRefer for secure online referral, or send via fax to 816‑237‑2065. You can also call 816‑237‑2020 for assistance.</p>
+        </details>
+        <details style="border-radius:16px;border:1px solid var(--ap-border);padding:16px;background:white;">
+          <summary style="font-weight:500;">Can I try devices before buying?</summary>
+          <p style="margin-top:8px;color:var(--ap-body);font-size:1em;">Yes. Visit the Connecting Pointe store to test adaptive products and get free cane repair. Call 816‑237‑2040 for an appointment.</p>
+        </details>
+        <details style="border-radius:16px;border:1px solid var(--ap-border);padding:16px;background:white;">
+          <summary style="font-weight:500;">Where are services available?</summary>
+          <p style="margin-top:8px;color:var(--ap-body);font-size:1em;">Kansas City (Low Vision Clinic, 7501 Prospect). KC Vision Performance (Overland Park) provides comprehensive optometric and neuro-optometric services.</p>
+        </details>
+      </div>
+      <!-- FAQ JSON-LD -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is low vision rehabilitation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A personalized plan combining devices (like magnifiers) and training (like improved lighting and contrast) to help you do everyday tasks independently."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who qualifies for a low vision evaluation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "People with 20/40 vision or worse in the better eye (with correction) or anyone struggling with daily visual tasks, contrast, or adjusting to recent vision changes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I refer a patient?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use VisionRefer for secure online referral, or send via fax to 816-237-2065. You can also call 816-237-2020 for assistance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I try devices before buying?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Visit the Connecting Pointe store to test adaptive products and get free cane repair. Call 816-237-2040 for an appointment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where are services available?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kansas City (Low Vision Clinic, 7501 Prospect). KC Vision Performance (Overland Park) provides comprehensive optometric and neuro-optometric services."
+            }
+          }
+        ]
+      }
+      </script>
+    </section>
+  </main>
+
+  <footer style="border-top:1px solid var(--ap-border);padding:32px 0;">
+    <div style="max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;font-size:15px;">
+      <div>
+        <p style="font-weight:600;">Alphapointe</p>
+        <p style="margin-top:8px;color:var(--ap-body);">Empowering people with vision loss to achieve their goals and live independently.</p>
+      </div>
+      <div>
+        <p style="font-weight:600;">Contact</p>
+        <ul style="margin-top:8px;color:var(--ap-body);list-style:none;padding:0;">
+          <li>Kansas City Clinic — 7501 Prospect, Kansas City, MO 64132</li>
+          <li>Appointments: <a style="text-decoration:underline;" href="tel:+18162372020">816‑237‑2020</a></li>
+          <li>Fax: <a style="text-decoration:underline;" href="fax:+18162372065">816‑237‑2065</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-weight:600;">Quick links</p>
+        <ul style="margin-top:8px;color:var(--ap-body);list-style:none;padding:0;">
+          <li><a style="text-decoration:underline;" href="#refer">VisionRefer / Referrals</a></li>
+          <li><a style="text-decoration:underline;" href="#store">Connecting Pointe Store</a></li>
+          <li><a style="text-decoration:underline;" href="#support-groups">Support Groups</a></li>
+          <li><a style="text-decoration:underline;" href="#youth">Youth Events & Camps</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;font-size:13px;color:#888;margin-top:32px;">
+      © 2025 Alphapointe — For demonstration build purposes.
+    </div>
+  </footer>
+</body>
+</html>
