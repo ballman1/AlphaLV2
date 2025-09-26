@@ -71,18 +71,37 @@
   .w-full{width:100%}
     .object-cover{object-fit:cover}
     .p-5{padding:1.25rem}
+    
+    /* Updated grid classes for main services section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
     @media (min-width:768px){
       .grid-wrap{grid-template-columns:1fr 1fr}
       .cards-wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
       .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
+    
     @media (min-width:1024px){
       .team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
       .cards-wrap{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .services-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
     }
+    
   .card > img{margin-bottom:.75rem}
     @media (min-width:1280px){
       .cards-wrap{grid-template-columns:repeat(4,minmax(0,1fr))}
+    }
+    
+    /* Logo styling */
+    .logo-img {
+      height: 2rem;
+      width: auto;
+      max-width: 120px;
     }
   </style>
 
@@ -137,8 +156,12 @@
   <header class="border border-muted" style="border-left:0;border-right:0;border-top:0;">
     <div class="max-w-6xl px-4 py-4 flex items-center justify-between" style="margin:0 auto">
       <div class="flex items-center" style="gap:.75rem">
-        <span aria-hidden class="" style="display:inline-block;height:2rem;width:2rem;border-radius:.5rem;background:var(--ap-primary)"></span>
-        <span class="font-semibold tracking-tight">Alphapointe</span>
+        <!-- Updated logo section - replace the src with actual Alphapointe logo URL -->
+        <img src="https://www.alphapointe.org/wp-content/uploads/2024/11/Alphapointe-logo.png" alt="Alphapointe" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'"/>
+        <div style="display:none;">
+          <span aria-hidden class="" style="display:inline-block;height:2rem;width:2rem;border-radius:.5rem;background:var(--ap-primary)"></span>
+          <span class="font-semibold tracking-tight">Alphapointe</span>
+        </div>
       </div>
       <nav aria-label="Primary" class="items-center" style="gap:1.5rem;display:none">
         <a class="" href="#services">Vision Services</a>
@@ -159,7 +182,7 @@
     <div class="max-w-6xl px-4 py-14 grid-wrap" style="margin:0 auto;display:grid;gap:2.5rem;grid-template-columns:1fr;">
       <div>
         <h1 class="text-3xl font-semibold leading-tight tracking-tight" style="font-size:clamp(1.875rem,2.5vw,3rem)">Vision Services that restore confidence and independence.</h1>
-        <p class="mt-4 text-body text-lg">When glasses, contacts, surgery, or treatments aren’t enough, Alphapointe teaches the skills and tools to live independently—at home, work, school, and in the community.</p>
+        <p class="mt-4 text-body text-lg">When glasses, contacts, surgery, or treatments aren't enough, Alphapointe teaches the skills and tools to live independently—at home, work, school, and in the community.</p>
         <div class="mt-6" style="display:flex;flex-wrap:wrap;gap:.75rem">
           <a href="#low-vision" class="btn btn-primary">Explore Services</a>
           <a href="#refer" class="btn btn-outline">Clinician Referrals</a>
@@ -188,9 +211,10 @@
     <section id="services" class="max-w-6xl px-4 py-12" style="margin:0 auto">
       <h2 class="text-2xl font-semibold" style="font-size:clamp(1.5rem,2vw,1.875rem)">What we do</h2>
       <p class="mt-2 text-body">A full spectrum of rehabilitation and training services—delivered by specialists who focus on practical, real‑life outcomes.</p>
-      <div class="mt-8 cards-wrap" style="display:grid;gap:1rem;grid-template-columns:1fr;">
+      <div class="mt-8 services-grid">
         <!-- Low Vision Clinic -->
-        $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Low-vision-scaled.jpg" alt="Low vision evaluation with magnifiers and task lighting" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+        <article class="card">
+          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Low-vision-scaled.jpg" alt="Low vision evaluation with magnifiers and task lighting" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Low Vision Clinic</h3>
           <p class="mt-2 text-sm text-body">Assessment, devices, and training when medical treatments and standard eyewear are no longer enough. Expect tailored strategies for contrast, lighting, organization, and the right magnification tools.</p>
           <ul class="mt-3 text-sm list-disc text-body">
@@ -202,7 +226,8 @@
         </article>
 
         <!-- Orientation & Mobility -->
-        $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Alyssa.jpg" alt="Orientation and mobility specialist with client during training" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+        <article class="card">
+          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Alyssa.jpg" alt="Orientation and mobility specialist with client during training" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Orientation &amp; Mobility</h3>
           <p class="mt-2 text-sm text-body">Training to move confidently indoors and outdoors—at crossings, on sidewalks, in stores, and on public transit.</p>
           <ul class="mt-3 text-sm list-disc text-body">
@@ -213,7 +238,8 @@
         </article>
 
         <!-- Adaptive Technology -->
-        $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/03/NYC-Computer-scaled.jpg" alt="Adaptive technology training: large-print keyboard and high-contrast screen" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+        <article class="card">
+          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/03/NYC-Computer-scaled.jpg" alt="Adaptive technology training: large-print keyboard and high-contrast screen" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Adaptive Technology Training</h3>
           <p class="mt-2 text-sm text-body">Accessible tech for school, work, and home—from screen readers and magnifiers to keyboard shortcuts and smartphone gestures/voice.</p>
           <ul class="mt-3 text-sm list-disc text-body">
@@ -224,7 +250,8 @@
         </article>
 
         <!-- ADL -->
-        $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/senior.jpeg" alt="Activities of daily living training for seniors at Alphapointe" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+        <article class="card">
+          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/senior.jpeg" alt="Activities of daily living training for seniors at Alphapointe" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Activities of Daily Living (ADL)</h3>
           <p class="mt-2 text-sm text-body">Skills and systems for independence at home.</p>
           <ul class="mt-3 text-sm list-disc text-body">
@@ -235,7 +262,8 @@
         </article>
 
         <!-- Braille -->
-        $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Emily.jpg" alt="Braille instruction session at Alphapointe (illustrative)" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+        <article class="card">
+          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Emily.jpg" alt="Braille instruction session at Alphapointe (illustrative)" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Braille Reading &amp; Writing</h3>
           <p class="mt-2 text-sm text-body">Foundations of the Braille code, tracking lines, and writing tools.</p>
           <ul class="mt-3 text-sm list-disc text-body">
@@ -246,20 +274,23 @@
         </article>
 
         <!-- Support Groups -->
-        $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/senior.jpeg" alt="Support group with friendly discussion (Alphapointe)" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+        <article class="card">
+          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/senior.jpeg" alt="Support group with friendly discussion (Alphapointe)" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Support Groups &amp; Free Classes</h3>
           <p class="mt-2 text-sm text-body">Peer connection plus practical classes in Braille, adaptive tech, O&amp;M, and ADL skills.</p>
           <p class="mt-2 text-sm text-body">Call to register and check the events calendar.</p>
         </article>
 
         <!-- Youth -->
-        $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Technology-camp-scaled.jpg" alt="Alphapointe Technology Camp with youth learning adaptive tech" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+        <article class="card">
+          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Technology-camp-scaled.jpg" alt="Alphapointe Technology Camp with youth learning adaptive tech" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Youth Events &amp; Camps</h3>
           <p class="mt-2 text-sm text-body">Adventure &amp; Technology Camps, College Prep, and S.T.E.P. summer work experiences build confidence and real‑world skills.</p>
         </article>
 
         <!-- Store -->
-        $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/NYC-Computer-scaled.jpg" alt="Adaptive products at the Connecting Pointe store" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+        <article class="card">
+          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/NYC-Computer-scaled.jpg" alt="Adaptive products at the Connecting Pointe store" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Connecting Pointe Adaptive Store</h3>
           <p class="mt-2 text-sm text-body">Try magnifiers, talking devices, Braille tools, mobility aids—and get free cane repair.</p>
           <p class="mt-2 text-sm text-body">To visit, call <a class="underline" href="tel:+18162372040">816‑237‑2040</a> for an appointment.</p>
@@ -274,63 +305,72 @@
         <p class="mt-2 text-body">Meet the doctors and rehabilitation specialists who deliver comprehensive low vision care, training, and support.</p>
         <div class="mt-8 team-grid" style="display:grid;gap:1.25rem;grid-template-columns:1fr;">
 
-          $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Dr.-Wiese-1024x683.jpg" alt="Dr. Cal Wiese" class="w-full aspect-4-3 object-cover"/>
+          <article class="card">
+            <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Dr.-Wiese-1024x683.jpg" alt="Dr. Cal Wiese" class="w-full aspect-4-3 object-cover"/>
             <div class="p-5">
               <h3 class="font-semibold">Dr. Cal Wiese</h3>
               <p class="text-sm text-body">Low Vision Optometrist</p>
             </div>
           </article>
 
-          $1<img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/08/Dr.-Emily-Kyle.jpg" alt="Dr. Emily Kyle" class="w-full aspect-4-3 object-cover"/>
+          <article class="card">
+            <img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/08/Dr.-Emily-Kyle.jpg" alt="Dr. Emily Kyle" class="w-full aspect-4-3 object-cover"/>
             <div class="p-5">
               <h3 class="font-semibold">Dr. Emily Kyle</h3>
               <p class="text-sm text-body">Optometrist</p>
             </div>
           </article>
 
-          $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/08/Shannon-Fugate-1024x765.jpg" alt="Shannon Fugate, MOT, OTR/L" class="w-full aspect-4-3 object-cover"/>
+          <article class="card">
+            <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/08/Shannon-Fugate-1024x765.jpg" alt="Shannon Fugate, MOT, OTR/L" class="w-full aspect-4-3 object-cover"/>
             <div class="p-5">
               <h3 class="font-semibold">Shannon Fugate, MOT, OTR/L</h3>
               <p class="text-sm text-body">Occupational Therapist</p>
             </div>
           </article>
 
-          $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/08/Becky-Dumsky-1536x1123.jpg" alt="Becky Dumsky, COTA/L" class="w-full aspect-4-3 object-cover"/>
+          <article class="card">
+            <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/08/Becky-Dumsky-1536x1123.jpg" alt="Becky Dumsky, COTA/L" class="w-full aspect-4-3 object-cover"/>
             <div class="p-5">
               <h3 class="font-semibold">Becky Dumsky, COTA/L</h3>
               <p class="text-sm text-body">Certified Occupational Therapy Assistant</p>
             </div>
           </article>
 
-          $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Amber.jpg" alt="Amber Hagge, COTA/L" class="w-full aspect-4-3 object-cover"/>
+          <article class="card">
+            <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Amber.jpg" alt="Amber Hagge, COTA/L" class="w-full aspect-4-3 object-cover"/>
             <div class="p-5">
               <h3 class="font-semibold">Amber Hagge, COTA/L</h3>
               <p class="text-sm text-body">Certified Occupational Therapy Assistant</p>
             </div>
           </article>
 
-          $1<img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Emily.jpg" alt="Emily Haapala, CVRT / O&M" class="w-full aspect-4-3 object-cover"/>
+          <article class="card">
+            <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Emily.jpg" alt="Emily Haapala, CVRT / O&M" class="w-full aspect-4-3 object-cover"/>
             <div class="p-5">
               <h3 class="font-semibold">Emily Haapala, CVRT / O&amp;M</h3>
               <p class="text-sm text-body">Vision Rehabilitation Therapist &amp; Orientation &amp; Mobility Specialist</p>
             </div>
           </article>
 
-          $1<img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/08/Lynda-Hansen.jpg" alt="Lynda Hansen, Orientation & Mobility Specialist" class="w-full aspect-4-3 object-cover"/>
+          <article class="card">
+            <img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/08/Lynda-Hansen.jpg" alt="Lynda Hansen, Orientation & Mobility Specialist" class="w-full aspect-4-3 object-cover"/>
             <div class="p-5">
               <h3 class="font-semibold">Lynda Hansen</h3>
               <p class="text-sm text-body">Orientation &amp; Mobility Specialist</p>
             </div>
           </article>
 
-          $1<img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/08/Mandy-1024x699.jpg" alt="Mandy Myers, Activities of Daily Living Instructor" class="w-full aspect-4-3 object-cover"/>
+          <article class="card">
+            <img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/08/Mandy-1024x699.jpg" alt="Mandy Myers, Activities of Daily Living Instructor" class="w-full aspect-4-3 object-cover"/>
             <div class="p-5">
               <h3 class="font-semibold">Mandy Myers</h3>
               <p class="text-sm text-body">Activities of Daily Living Instructor</p>
             </div>
           </article>
 
-          $1<img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/07/06.28.25-Burbach-36-A-2-1018x1024.jpg" alt="Julie Burbach, Vision Therapist" class="w-full aspect-4-3 object-cover"/>
+          <article class="card">
+            <img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/07/06.28.25-Burbach-36-A-2-1018x1024.jpg" alt="Julie Burbach, Vision Therapist" class="w-full aspect-4-3 object-cover"/>
             <div class="p-5">
               <h3 class="font-semibold">Julie Burbach</h3>
               <p class="text-sm text-body">Vision Therapist</p>
@@ -354,130 +394,3 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Locations -->
-    <section id="locations" class="max-w-6xl px-4 py-12" style="margin:0 auto">
-      <div class="mt-2" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="" loading="lazy" class="w-full aspect-4-3 object-cover rounded-xl ring-1"/>
-        <img src="https://images.unsplash.com/photo-1520974735194-8d95a2490f3e?q=80&w=1600&auto=format&fit=crop" alt="" loading="lazy" class="w-full aspect-4-3 object-cover rounded-xl ring-1"/>
-        <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=1600&auto=format&fit=crop" alt="" loading="lazy" class="w-full aspect-4-3 object-cover rounded-xl ring-1"/>
-      </div>
-      <h2 class="text-2xl font-semibold" style="font-size:clamp(1.5rem,2vw,1.875rem)">Locations</h2>
-      <div class="mt-6" style="display:grid;gap:1.5rem;grid-template-columns:1fr;">
-        <div class="card">
-          <h3 class="text-lg font-semibold">Alphapointe Low Vision Clinic (Kansas City)</h3>
-          <p class="mt-1 text-sm text-body">7501 Prospect, Kansas City, MO 64132</p>
-          <p class="text-sm text-body">Appointments: <a class="underline" href="tel:+18162372020">816‑237‑2020</a></p>
-          <div class="mt-3" style="display:flex;gap:.75rem">
-            <a class="btn btn-outline" href="https://maps.google.com/?q=7501+Prospect+Kansas+City+MO+64132" target="_blank" rel="noopener noreferrer">Map</a>
-            <a class="btn btn-outline" href="#contact">Contact</a>
-          </div>
-        </div>
-        <div class="card">
-          <h3 class="text-lg font-semibold">KC Vision Performance (Overland Park)</h3>
-          <p class="mt-1 text-sm text-body">Operated by Alphapointe — comprehensive optometric &amp; neuro‑optometric services.</p>
-          <div class="mt-3" style="display:flex;gap:.75rem">
-            <a class="btn btn-outline" href="https://kcvisionperformance.com/" target="_blank" rel="noopener noreferrer">Visit Site</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="bg-tint">
-      <div class="max-w-6xl px-4 py-12" style="margin:0 auto">
-        <div class="card">
-          <h2 class="text-2xl font-semibold">Request an Appointment</h2>
-          <p class="mt-2 text-body text-sm">Call <a class="underline" href="tel:+18162372020">816‑237‑2020</a> or send a message below. Our team will help you choose services and next steps.</p>
-          <form class="mt-6" style="display:grid;gap:1rem" onsubmit="event.preventDefault();alert('Thank you! We\'ll contact you soon.');">
-            <label class="text-sm">Full Name<input required class="mt-1" style="width:100%;border:1px solid var(--ap-border);border-radius:.75rem;padding:.5rem .75rem" placeholder="Your name"/></label>
-            <label class="text-sm">Phone<input required class="mt-1" style="width:100%;border:1px solid var(--ap-border);border-radius:.75rem;padding:.5rem .75rem" placeholder="(###) ###‑####"/></label>
-            <label class="text-sm">Email<input class="mt-1" style="width:100%;border:1px solid var(--ap-border);border-radius:.75rem;padding:.5rem .75rem" placeholder="you@example.com"/></label>
-            <label class="text-sm">How can we help?<textarea class="mt-1" style="width:100%;border:1px solid var(--ap-border);border-radius:.75rem;padding:.5rem .75rem" rows="4" placeholder="Tell us about your goals or challenges"></textarea></label>
-            <div class="flex items-center" style="gap:.75rem">
-              <button class="btn btn-primary" type="submit">Send</button>
-              <p class="text-xs text-body">Submitting this form does not share medical records. For referrals, please use VisionRefer or fax.</p>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="max-w-6xl px-4 py-12" style="margin:0 auto">
-      <h2 class="text-2xl font-semibold" style="font-size:clamp(1.5rem,2vw,1.875rem)">Frequently Asked Questions</h2>
-      <div class="mt-6" style="display:grid;gap:1.5rem;grid-template-columns:1fr;">
-        <details class="card">
-          <summary class="font-medium">What is low vision rehabilitation?</summary>
-          <p class="mt-2 text-sm text-body">A personalized plan combining devices (like magnifiers) and training (like improved lighting and contrast) to help you do everyday tasks more independently.</p>
-        </details>
-        <details class="card">
-          <summary class="font-medium">Who qualifies for a low vision evaluation?</summary>
-          <p class="mt-2 text-sm text-body">People with 20/40 vision or worse in the better eye (with correction) or anyone struggling with daily visual tasks, contrast, scotomas, or peripheral loss.</p>
-        </details>
-        <details class="card">
-          <summary class="font-medium">How do I refer a patient?</summary>
-          <p class="mt-2 text-sm text-body">Use VisionRefer for secure online referral, or send via fax to 816‑237‑2065. You can also call 816‑237‑2020 for assistance.</p>
-        </details>
-        <details class="card">
-          <summary class="font-medium">Can I try devices before buying?</summary>
-          <p class="mt-2 text-sm text-body">Yes. Visit the Connecting Pointe store to test adaptive products and get free cane repair. Call 816‑237‑2040 for an appointment.</p>
-        </details>
-        <details class="card">
-          <summary class="font-medium">Where are services available?</summary>
-          <p class="mt-2 text-sm text-body">Kansas City (Low Vision Clinic, 7501 Prospect). KC Vision Performance (Overland Park) provides comprehensive optometric and neuro‑optometric services operated by Alphapointe.</p>
-        </details>
-      </div>
-
-      <!-- FAQ JSON-LD -->
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "What is low vision rehabilitation?", "acceptedAnswer": { "@type": "Answer", "text": "A personalized plan combining devices (like magnifiers) and training (like improved lighting and contrast) to help you do everyday tasks more independently." } },
-          { "@type": "Question", "name": "Who qualifies for a low vision evaluation?", "acceptedAnswer": { "@type": "Answer", "text": "People with 20/40 vision or worse in the better eye (with correction) or anyone struggling with daily visual tasks, contrast, scotomas, or peripheral loss." } },
-          { "@type": "Question", "name": "How do I refer a patient?", "acceptedAnswer": { "@type": "Answer", "text": "Use VisionRefer for secure online referral, or send via fax to 816-237-2065. You can also call 816-237-2020 for assistance." } },
-          { "@type": "Question", "name": "Can I try devices before buying?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Visit the Connecting Pointe store to test adaptive products and get free cane repair. Call 816-237-2040 for an appointment." } },
-          { "@type": "Question", "name": "Where are services available?", "acceptedAnswer": { "@type": "Answer", "text": "Kansas City (Low Vision Clinic, 7501 Prospect). KC Vision Performance (Overland Park) provides comprehensive optometric and neuro-optometric services operated by Alphapointe." } }
-        ]
-      }
-      </script>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="border border-muted" style="border-left:0;border-right:0;border-bottom:0;">
-    <div class="max-w-6xl px-4 py-10" style="margin:0 auto;display:grid;gap:1.5rem;grid-template-columns:1fr;">
-      <div>
-        <p class="font-semibold">Alphapointe</p>
-        <p class="mt-2 text-body">Empowering people with vision loss to achieve their goals and live independently.</p>
-      </div>
-      <div>
-        <p class="font-semibold">Contact</p>
-        <ul class="mt-2 text-body" style="list-style:none;padding-left:0">
-          <li>Kansas City Clinic — 7501 Prospect, Kansas City, MO 64132</li>
-          <li>Appointments: <a class="underline" href="tel:+18162372020">816‑237‑2020</a></li>
-          <li>Fax: <a class="underline" href="fax:+18162372065">816‑237‑2065</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-semibold">Quick links</p>
-        <ul class="mt-2 text-body" style="list-style:none;padding-left:0">
-          <li><a class="underline" href="#refer">VisionRefer / Referrals</a></li>
-          <li><a class="underline" href="#store">Connecting Pointe Store</a></li>
-          <li><a class="underline" href="#support-groups">Support Groups</a></li>
-          <li><a class="underline" href="#youth">Youth Events & Camps</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="text-center text-sm text-body" style="padding-bottom:2rem">© <span id="year"></span> Alphapointe — For demonstration build purposes.</div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-
