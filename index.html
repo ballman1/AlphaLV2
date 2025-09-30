@@ -7,94 +7,493 @@
   <meta name="description" content="Learn about Alphapointe's full spectrum of vision services in Kansas City—Low Vision Clinic, Orientation & Mobility, Adaptive Technology, ADL training, Braille, Support Groups, Youth Camps, and the Connecting Pointe adaptive store. Clinicians can refer via VisionRefer, fax, or phone."/>
 
   <style>
-    :root{--ap-primary:#007a6f;--ap-accent:#ff9f1c;--ap-ink:#0f172a;--ap-body:#475569;--ap-tint:#f0fdfa;--ap-border:#e2e8f0}
-    a:hover{color:var(--ap-primary)}
-    /* Minimal reset for demo */
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
-    img{max-width:100%;height:auto;display:block}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    .focus\:not-sr-only:focus{position:fixed;width:auto;height:auto;clip:auto;margin:0;white-space:normal}
-    /* Utility shims (subset of Tailwind-like classes used in markup) */
-    .min-h-screen{min-height:100vh}
-    .bg-white{background:#fff}
-    .bg-ink{background:var(--ap-ink)}
-    .text-ink{color:var(--ap-ink)}
-    .text-body{color:var(--ap-body)}
-    .bg-tint{background:var(--ap-tint)}
-    .border{border:1px solid}
-    .border-muted{border-color:var(--ap-border)}
-    .ring-1{box-shadow:0 0 0 1px var(--ap-border) inset}
-    .container{max-width:72rem;margin:0 auto;padding:0 1rem}
-    .grid{display:grid}
-    .grid-2{grid-template-columns:1fr}
-    @media (min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media (min-width:1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    .gap-6{gap:1.5rem}
-    .gap-10{gap:2.5rem}
-    .px-4{padding-left:1rem;padding-right:1rem}
-    .py-4{padding-top:1rem;padding-bottom:1rem}
-    .py-10{padding-top:2.5rem;padding-bottom:2.5rem}
-    .py-12{padding-top:3rem;padding-bottom:3rem}
-    .py-14{padding-top:3.5rem;padding-bottom:3.5rem}
-    .rounded-xl{border-radius:0.75rem}
-    .rounded-2xl{border-radius:1rem}
-    .rounded-3xl{border-radius:1.5rem}
-    .shadow-sm{box-shadow:0 1px 2px rgba(0,0,0,.06)}
-    .flex{display:flex}
-    .items-center{align-items:center}
-    .justify-between{justify-content:space-between}
-    .text-sm{font-size:.875rem}
-    .text-lg{font-size:1.125rem}
-    .text-xl{font-size:1.25rem}
-    .text-2xl{font-size:1.5rem}
-    .text-3xl{font-size:1.875rem}
-    .text-5xl{font-size:3rem}
-    .font-semibold{font-weight:600}
-    .leading-tight{line-height:1.25}
-    .tracking-tight{letter-spacing:-.01em}
-    .mt-1{margin-top:.25rem}
-    .mt-2{margin-top:.5rem}
-    .mt-3{margin-top:.75rem}
-    .mt-4{margin-top:1rem}
-    .mt-6{margin-top:1.5rem}
-    .mt-8{margin-top:2rem}
-    .mb-4{margin-bottom:1rem}
-    .list-disc{list-style:disc;padding-left:1.25rem}
-    .underline{text-decoration:underline}
-    .btn{border-radius:1rem;padding:.75rem 1.25rem;border:1px solid var(--ap-border);display:inline-flex;align-items:center;justify-content:center}
-    .btn-primary{background:var(--ap-primary);color:#fff;border-color:var(--ap-primary)}
-    .btn-outline{background:#fff;color:var(--ap-ink)}
-    .card{background:#fff;border:1px solid var(--ap-border);border-radius:1.5rem;padding:1.5rem;box-shadow:0 1px 2px rgba(0,0,0,.06)}
-    .aspect-16-9{aspect-ratio:16/9}
-    .aspect-4-3{aspect-ratio:4/3}
-    .max-w-6xl{max-width:72rem;margin-left:auto;margin-right:auto}
-  .w-full{width:100%}
-    .object-cover{object-fit:cover}
-    .p-5{padding:1.25rem}
+    :root {
+      --ap-primary: #007a6f;
+      --ap-primary-dark: #005c54;
+      --ap-accent: #ff9f1c;
+      --ap-accent-dark: #e68a00;
+      --ap-ink: #0f172a;
+      --ap-body: #475569;
+      --ap-tint: #f0fdfa;
+      --ap-border: #e2e8f0;
+      --ap-light: #f8fafc;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    a:hover {
+      color: var(--ap-primary);
+    }
+    
+    /* Reset and base styles */
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--ap-ink);
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    .focus\:not-sr-only:focus {
+      position: fixed;
+      width: auto;
+      height: auto;
+      clip: auto;
+      margin: 0;
+      white-space: normal;
+    }
+    
+    /* Utility classes */
+    .min-h-screen {
+      min-height: 100vh;
+    }
+    
+    .bg-white {
+      background: #fff;
+    }
+    
+    .bg-ink {
+      background: var(--ap-ink);
+    }
+    
+    .text-ink {
+      color: var(--ap-ink);
+    }
+    
+    .text-body {
+      color: var(--ap-body);
+    }
+    
+    .bg-tint {
+      background: var(--ap-tint);
+    }
+    
+    .bg-light {
+      background: var(--ap-light);
+    }
+    
+    .border {
+      border: 1px solid;
+    }
+    
+    .border-muted {
+      border-color: var(--ap-border);
+    }
+    
+    .ring-1 {
+      box-shadow: 0 0 0 1px var(--ap-border) inset;
+    }
+    
+    .container {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .grid {
+      display: grid;
+    }
+    
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+    
+    @media (min-width: 768px) {
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      
+      .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+    
+    .gap-6 {
+      gap: 1.5rem;
+    }
+    
+    .gap-10 {
+      gap: 2.5rem;
+    }
+    
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+    .py-10 {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    
+    .py-12 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    
+    .py-14 {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+    
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+    
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+    
+    .rounded-3xl {
+      border-radius: 1.5rem;
+    }
+    
+    .shadow-sm {
+      box-shadow: 0 1px 2px rgba(0,0,0,.06);
+    }
+    
+    .shadow-md {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .flex-col {
+      flex-direction: column;
+    }
+    
+    .flex-wrap {
+      flex-wrap: wrap;
+    }
+    
+    .items-center {
+      align-items: center;
+    }
+    
+    .justify-between {
+      justify-content: space-between;
+    }
+    
+    .justify-center {
+      justify-content: center;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    .text-sm {
+      font-size: .875rem;
+    }
+    
+    .text-xs {
+      font-size: .75rem;
+    }
+    
+    .text-lg {
+      font-size: 1.125rem;
+    }
+    
+    .text-xl {
+      font-size: 1.25rem;
+    }
+    
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+    
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+    
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+    
+    .text-5xl {
+      font-size: 3rem;
+    }
+    
+    .font-semibold {
+      font-weight: 600;
+    }
+    
+    .font-bold {
+      font-weight: 700;
+    }
+    
+    .font-medium {
+      font-weight: 500;
+    }
+    
+    .leading-tight {
+      line-height: 1.25;
+    }
+    
+    .tracking-tight {
+      letter-spacing: -.01em;
+    }
+    
+    .mt-1 {
+      margin-top: .25rem;
+    }
+    
+    .mt-2 {
+      margin-top: .5rem;
+    }
+    
+    .mt-3 {
+      margin-top: .75rem;
+    }
+    
+    .mt-4 {
+      margin-top: 1rem;
+    }
+    
+    .mt-6 {
+      margin-top: 1.5rem;
+    }
+    
+    .mt-8 {
+      margin-top: 2rem;
+    }
+    
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    
+    .list-disc {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    
+    .underline {
+      text-decoration: underline;
+    }
+    
+    .btn {
+      border-radius: 1rem;
+      padding: .75rem 1.25rem;
+      border: 1px solid var(--ap-border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background: var(--ap-primary);
+      color: #fff;
+      border-color: var(--ap-primary);
+    }
+    
+    .btn-primary:hover {
+      background: var(--ap-primary-dark);
+      border-color: var(--ap-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 122, 111, 0.2);
+    }
+    
+    .btn-accent {
+      background: var(--ap-accent);
+      color: #fff;
+      border-color: var(--ap-accent);
+    }
+    
+    .btn-accent:hover {
+      background: var(--ap-accent-dark);
+      border-color: var(--ap-accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(255, 159, 28, 0.2);
+    }
+    
+    .btn-outline {
+      background: #fff;
+      color: var(--ap-ink);
+    }
+    
+    .btn-outline:hover {
+      background: var(--ap-light);
+      border-color: var(--ap-primary);
+      color: var(--ap-primary);
+    }
+    
+    .card {
+      background: #fff;
+      border: 1px solid var(--ap-border);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .aspect-16-9 {
+      aspect-ratio: 16/9;
+    }
+    
+    .aspect-4-3 {
+      aspect-ratio: 4/3;
+    }
+    
+    .max-w-6xl {
+      max-width: 72rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .w-full {
+      width: 100%;
+    }
+    
+    .object-cover {
+      object-fit: cover;
+    }
+    
+    .p-5 {
+      padding: 1.25rem;
+    }
+    
+    /* Hero section specific styles */
+    .hero {
+      background: var(--ap-tint);
+      padding: 3.5rem 1rem;
+    }
+    
+    .hero-content {
+      max-width: 72rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+    }
+    
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .hero-title {
+      font-size: clamp(1.875rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-description {
+      font-size: 1.125rem;
+      color: var(--ap-body);
+      margin-bottom: 2rem;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    
+    .hero-image {
+      width: 100%;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .hero-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-top: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .hero-card {
+        margin-top: 0;
+        grid-column: 1 / -1;
+      }
+    }
     
     /* Updated grid classes for main services section */
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1rem;
+      gap: 1.5rem;
     }
     
-    @media (min-width:768px){
-      .grid-wrap{grid-template-columns:1fr 1fr}
-      .cards-wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
     
-    @media (min-width:1024px){
-      .team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-      .cards-wrap{grid-template-columns:repeat(3,minmax(0,1fr))}
-      .services-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
     
-  .card > img{margin-bottom:.75rem}
-    @media (min-width:1280px){
-      .cards-wrap{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card > img {
+      margin-bottom: .75rem;
     }
     
     /* Logo styling */
@@ -103,74 +502,248 @@
       width: auto;
       max-width: 120px;
     }
-  </style>
-
-  <!-- Organization + Clinic + OfferCatalog schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Alphapointe",
-    "url": "https://www.alphapointe.org",
-    "sameAs": [
-      "https://www.facebook.com/Alphapointe/",
-      "https://twitter.com/Alphapointe",
-      "https://www.instagram.com/alphapointe/"
-    ],
-    "department": {
-      "@type": "MedicalClinic",
-      "name": "Alphapointe Low Vision Clinic",
-      "url": "https://www.alphapointe.org/vision-services/low-vision-clinic/",
-      "telephone": "+1-816-237-2020",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "7501 Prospect",
-        "addressLocality": "Kansas City",
-        "addressRegion": "MO",
-        "postalCode": "64132",
-        "addressCountry": "US"
-      }
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Vision Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Low Vision Clinic", "url": "#low-vision" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Orientation & Mobility", "url": "#om" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adaptive Technology Training", "url": "#adaptive-tech" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Activities of Daily Living (ADL) Training", "url": "#adl" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Braille Reading & Writing", "url": "#braille" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Support Groups", "url": "#support-groups" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Youth Events & Camps", "url": "#youth" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Connecting Pointe Adaptive Store", "url": "#store" } }
-      ]
+    
+    /* Navigation styles */
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      z-index: 1000;
     }
-  }
-  </script>
+    
+    .nav-menu.active {
+      display: flex;
+    }
+    
+    .nav-menu a {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--ap-border);
+      text-decoration: none;
+      color: var(--ap-ink);
+    }
+    
+    .nav-menu a:last-child {
+      border-bottom: none;
+    }
+    
+    .nav-menu a:hover {
+      color: var(--ap-primary);
+      background: var(--ap-tint);
+    }
+    
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .hamburger span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: var(--ap-ink);
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    @media (min-width: 1024px) {
+      .hamburger {
+        display: none;
+      }
+      
+      .nav-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        box-shadow: none;
+        padding: 0;
+        gap: 1.5rem;
+      }
+      
+      .nav-menu a {
+        padding: 0.5rem 0;
+        border-bottom: none;
+      }
+    }
+    
+    /* Form styles */
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--ap-border);
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: var(--ap-primary);
+      box-shadow: 0 0 0 3px rgba(0, 122, 111, 0.1);
+    }
+    
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .form-error {
+      color: #e53e3e;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+    
+    .form-success {
+      background: #f0fff4;
+      border: 1px solid #9ae6b4;
+      color: #22543d;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      display: none;
+    }
+    
+    /* Section headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-size: clamp(1.875rem, 3vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--ap-primary);
+    }
+    
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--ap-body);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Service card enhancements */
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--ap-tint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--ap-primary);
+      font-size: 1.5rem;
+    }
+    
+    /* Map placeholder */
+    .map-placeholder {
+      background: var(--ap-light);
+      border-radius: 1rem;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ap-body);
+      font-size: 1.125rem;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--ap-primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: var(--ap-primary-dark);
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body class="min-h-screen bg-white text-ink">
   <!-- Skip link -->
   <a href="#main" class="sr-only focus:not-sr-only" style="top:.5rem;left:.5rem;z-index:999;background:#000;color:#fff;padding:.5rem .75rem;border-radius:.5rem;">Skip to content</a>
 
   <!-- Header -->
-  <header class="border border-muted" style="border-left:0;border-right:0;border-top:0;">
+  <header class="border border-muted bg-white sticky top-0 z-50" style="border-left:0;border-right:0;border-top:0;">
     <div class="max-w-6xl px-4 py-4 flex items-center justify-between" style="margin:0 auto">
       <div class="flex items-center" style="gap:.75rem">
-        <!-- Updated logo section - replace the src with actual Alphapointe logo URL -->
-        <img src="https://www.alphapointe.org/wp-content/uploads/2024/11/Alphapointe-logo.png" alt="Alphapointe" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'"/>
-        <div style="display:none;">
-          <span aria-hidden class="" style="display:inline-block;height:2rem;width:2rem;border-radius:.5rem;background:var(--ap-primary)"></span>
-          <span class="font-semibold tracking-tight">Alphapointe</span>
-        </div>
+        <!-- Logo placeholder - replace with actual Alphapointe logo URL when available -->
+        <span aria-hidden class="" style="display:inline-block;height:2rem;width:2rem;border-radius:.5rem;background:var(--ap-primary)"></span>
+        <span class="font-semibold tracking-tight text-xl">Alphapointe</span>
       </div>
-      <nav aria-label="Primary" class="items-center" style="gap:1.5rem;display:none">
-        <a class="" href="#services">Vision Services</a>
-        <a class="" href="#refer">Refer a Patient</a>
-        <a class="" href="#locations">Locations</a>
-        <a class="" href="#store">Connecting Pointe Store</a>
-        <a class="" href="#faq">FAQ</a>
+      
+      <button class="hamburger lg:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav aria-label="Primary" class="nav-menu">
+        <a href="#services">Vision Services</a>
+        <a href="#refer">Refer a Patient</a>
+        <a href="#locations">Locations</a>
+        <a href="#store">Connecting Pointe Store</a>
+        <a href="#faq">FAQ</a>
       </nav>
-      <div class="flex items-center" style="gap:.5rem">
+      
+      <div class="hidden lg:flex items-center" style="gap:.5rem">
         <a href="tel:+18162372020" class="btn btn-outline">Call 816‑237‑2020</a>
         <a href="#refer" class="btn btn-primary">Refer a Patient</a>
       </div>
@@ -178,18 +751,22 @@
   </header>
 
   <!-- Hero -->
-  <section id="hero" class="bg-tint">
-    <div class="max-w-6xl px-4 py-14 grid-wrap" style="margin:0 auto;display:grid;gap:2.5rem;grid-template-columns:1fr;">
-      <div>
-        <h1 class="text-3xl font-semibold leading-tight tracking-tight" style="font-size:clamp(1.875rem,2.5vw,3rem)">Vision Services that restore confidence and independence.</h1>
-        <p class="mt-4 text-body text-lg">When glasses, contacts, surgery, or treatments aren't enough, Alphapointe teaches the skills and tools to live independently—at home, work, school, and in the community.</p>
-        <div class="mt-6" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a href="#low-vision" class="btn btn-primary">Explore Services</a>
-          <a href="#refer" class="btn btn-outline">Clinician Referrals</a>
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Vision Services that restore confidence and independence.</h1>
+        <p class="hero-description">When glasses, contacts, surgery, or treatments aren't enough, Alphapointe teaches the skills and tools to live independently—at home, work, school, and in the community.</p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn btn-primary">Explore Services</a>
+          <a href="#refer" class="btn btn-accent">Clinician Referrals</a>
         </div>
       </div>
-      <img src="https://images.unsplash.com/photo-1505575972945-280e29dfe3f1?q=80&w=1600&auto=format&fit=crop" alt="Person using a handheld magnifier with strong contrast lighting" loading="eager" fetchpriority="high" decoding="async" class="w-full aspect-4-3 object-cover rounded-3xl ring-1"/>
-      <div class="card">
+      
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1505575972945-280e29dfe3f1?q=80&w=1600&auto=format&fit=crop" alt="Person using a handheld magnifier with strong contrast lighting" loading="eager" fetchpriority="high" decoding="async"/>
+      </div>
+      
+      <div class="hero-card">
         <h2 class="text-xl font-semibold">Is this you?</h2>
         <ul class="mt-3 list-disc text-body text-sm">
           <li>20/40 or worse in the better eye (with correction)</li>
@@ -198,9 +775,9 @@
           <li>Reduced contrast sensitivity</li>
           <li>Difficulty adjusting to recent vision changes</li>
         </ul>
-        <div class="mt-4" style="display:flex;gap:.75rem">
-          <a href="#contact" class="btn btn-primary">Request an Appointment</a>
-          <a href="#locations" class="btn btn-outline">Find a Location</a>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="#contact" class="btn btn-primary text-sm">Request an Appointment</a>
+          <a href="#locations" class="btn btn-outline text-sm">Find a Location</a>
         </div>
       </div>
     </div>
@@ -209,12 +786,16 @@
   <main id="main">
     <!-- Services -->
     <section id="services" class="max-w-6xl px-4 py-12" style="margin:0 auto">
-      <h2 class="text-2xl font-semibold" style="font-size:clamp(1.5rem,2vw,1.875rem)">What we do</h2>
-      <p class="mt-2 text-body">A full spectrum of rehabilitation and training services—delivered by specialists who focus on practical, real‑life outcomes.</p>
-      <div class="mt-8 services-grid">
+      <div class="section-header">
+        <h2 class="section-title">What we do</h2>
+        <p class="section-subtitle">A full spectrum of rehabilitation and training services—delivered by specialists who focus on practical, real‑life outcomes.</p>
+      </div>
+      
+      <div class="services-grid">
         <!-- Low Vision Clinic -->
         <article class="card">
-          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Low-vision-scaled.jpg" alt="Low vision evaluation with magnifiers and task lighting" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+          <div class="service-icon">👁️</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1600&auto=format&fit=crop" alt="Low vision evaluation with magnifiers and task lighting" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Low Vision Clinic</h3>
           <p class="mt-2 text-sm text-body">Assessment, devices, and training when medical treatments and standard eyewear are no longer enough. Expect tailored strategies for contrast, lighting, organization, and the right magnification tools.</p>
           <ul class="mt-3 text-sm list-disc text-body">
@@ -222,12 +803,13 @@
             <li>Rehabilitation strategies: contrast, lighting, organization</li>
             <li>Home accommodations for daily tasks</li>
           </ul>
-          <div class="mt-4"><a href="#refer" class="text-sm underline">Refer a patient</a></div>
+          <div class="mt-4"><a href="#refer" class="text-sm underline font-medium">Refer a patient</a></div>
         </article>
 
         <!-- Orientation & Mobility -->
         <article class="card">
-          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Alyssa.jpg" alt="Orientation and mobility specialist with client during training" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+          <div class="service-icon">🚶</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1559757175-0eb3a6bfaa63?q=80&w=1600&auto=format&fit=crop" alt="Orientation and mobility specialist with client during training" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Orientation &amp; Mobility</h3>
           <p class="mt-2 text-sm text-body">Training to move confidently indoors and outdoors—at crossings, on sidewalks, in stores, and on public transit.</p>
           <ul class="mt-3 text-sm list-disc text-body">
@@ -239,7 +821,8 @@
 
         <!-- Adaptive Technology -->
         <article class="card">
-          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/03/NYC-Computer-scaled.jpg" alt="Adaptive technology training: large-print keyboard and high-contrast screen" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+          <div class="service-icon">💻</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" alt="Adaptive technology training: large-print keyboard and high-contrast screen" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Adaptive Technology Training</h3>
           <p class="mt-2 text-sm text-body">Accessible tech for school, work, and home—from screen readers and magnifiers to keyboard shortcuts and smartphone gestures/voice.</p>
           <ul class="mt-3 text-sm list-disc text-body">
@@ -251,7 +834,8 @@
 
         <!-- ADL -->
         <article class="card">
-          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/senior.jpeg" alt="Activities of daily living training for seniors at Alphapointe" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+          <div class="service-icon">🏠</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop" alt="Activities of daily living training for seniors" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Activities of Daily Living (ADL)</h3>
           <p class="mt-2 text-sm text-body">Skills and systems for independence at home.</p>
           <ul class="mt-3 text-sm list-disc text-body">
@@ -263,7 +847,8 @@
 
         <!-- Braille -->
         <article class="card">
-          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Emily.jpg" alt="Braille instruction session at Alphapointe (illustrative)" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+          <div class="service-icon">🔤</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1600&auto=format&fit=crop" alt="Braille instruction session" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Braille Reading &amp; Writing</h3>
           <p class="mt-2 text-sm text-body">Foundations of the Braille code, tracking lines, and writing tools.</p>
           <ul class="mt-3 text-sm list-disc text-body">
@@ -275,7 +860,8 @@
 
         <!-- Support Groups -->
         <article class="card">
-          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/senior.jpeg" alt="Support group with friendly discussion (Alphapointe)" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+          <div class="service-icon">👥</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1600&auto=format&fit=crop" alt="Support group with friendly discussion" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Support Groups &amp; Free Classes</h3>
           <p class="mt-2 text-sm text-body">Peer connection plus practical classes in Braille, adaptive tech, O&amp;M, and ADL skills.</p>
           <p class="mt-2 text-sm text-body">Call to register and check the events calendar.</p>
@@ -283,30 +869,34 @@
 
         <!-- Youth -->
         <article class="card">
-          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Technology-camp-scaled.jpg" alt="Alphapointe Technology Camp with youth learning adaptive tech" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+          <div class="service-icon">🎒</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1600&auto=format&fit=crop" alt="Youth learning adaptive technology" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Youth Events &amp; Camps</h3>
           <p class="mt-2 text-sm text-body">Adventure &amp; Technology Camps, College Prep, and S.T.E.P. summer work experiences build confidence and real‑world skills.</p>
         </article>
 
         <!-- Store -->
         <article class="card">
-          <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/NYC-Computer-scaled.jpg" alt="Adaptive products at the Connecting Pointe store" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
+          <div class="service-icon">🛒</div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1600&auto=format&fit=crop" alt="Adaptive products store" class="w-full aspect-16-9 object-cover rounded-2xl ring-1 mb-4"/>
           <h3 class="text-xl font-semibold">Connecting Pointe Adaptive Store</h3>
           <p class="mt-2 text-sm text-body">Try magnifiers, talking devices, Braille tools, mobility aids—and get free cane repair.</p>
-          <p class="mt-2 text-sm text-body">To visit, call <a class="underline" href="tel:+18162372040">816‑237‑2040</a> for an appointment.</p>
+          <p class="mt-2 text-sm text-body">To visit, call <a class="underline font-medium" href="tel:+18162372040">816‑237‑2040</a> for an appointment.</p>
         </article>
       </div>
     </section>
 
     <!-- Team -->
-    <section id="team" class="bg-tint">
-      <div class="max-w-6xl px-4 py-12" style="margin:0 auto">
-        <h2 class="text-2xl font-semibold" style="font-size:clamp(1.5rem,2vw,1.875rem)">Our Vision Clinic Team</h2>
-        <p class="mt-2 text-body">Meet the doctors and rehabilitation specialists who deliver comprehensive low vision care, training, and support.</p>
-        <div class="mt-8 team-grid" style="display:grid;gap:1.25rem;grid-template-columns:1fr;">
-
+    <section id="team" class="bg-light py-12">
+      <div class="max-w-6xl px-4" style="margin:0 auto">
+        <div class="section-header">
+          <h2 class="section-title">Our Vision Clinic Team</h2>
+          <p class="section-subtitle">Meet the doctors and rehabilitation specialists who deliver comprehensive low vision care, training, and support.</p>
+        </div>
+        
+        <div class="services-grid">
           <article class="card">
-            <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Dr.-Wiese-1024x683.jpg" alt="Dr. Cal Wiese" class="w-full aspect-4-3 object-cover"/>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1559059238-615af9455587?q=80&w=1600&auto=format&fit=crop" alt="Dr. Cal Wiese" class="w-full aspect-4-3 object-cover rounded-xl"/>
             <div class="p-5">
               <h3 class="font-semibold">Dr. Cal Wiese</h3>
               <p class="text-sm text-body">Low Vision Optometrist</p>
@@ -314,7 +904,7 @@
           </article>
 
           <article class="card">
-            <img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/08/Dr.-Emily-Kyle.jpg" alt="Dr. Emily Kyle" class="w-full aspect-4-3 object-cover"/>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1594824388371-d9eb5c4f8ad1?q=80&w=1600&auto=format&fit=crop" alt="Dr. Emily Kyle" class="w-full aspect-4-3 object-cover rounded-xl"/>
             <div class="p-5">
               <h3 class="font-semibold">Dr. Emily Kyle</h3>
               <p class="text-sm text-body">Optometrist</p>
@@ -322,75 +912,307 @@
           </article>
 
           <article class="card">
-            <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/08/Shannon-Fugate-1024x765.jpg" alt="Shannon Fugate, MOT, OTR/L" class="w-full aspect-4-3 object-cover"/>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1600&auto=format&fit=crop" alt="Shannon Fugate, MOT, OTR/L" class="w-full aspect-4-3 object-cover rounded-xl"/>
             <div class="p-5">
               <h3 class="font-semibold">Shannon Fugate, MOT, OTR/L</h3>
               <p class="text-sm text-body">Occupational Therapist</p>
             </div>
           </article>
-
-          <article class="card">
-            <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/08/Becky-Dumsky-1536x1123.jpg" alt="Becky Dumsky, COTA/L" class="w-full aspect-4-3 object-cover"/>
-            <div class="p-5">
-              <h3 class="font-semibold">Becky Dumsky, COTA/L</h3>
-              <p class="text-sm text-body">Certified Occupational Therapy Assistant</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Amber.jpg" alt="Amber Hagge, COTA/L" class="w-full aspect-4-3 object-cover"/>
-            <div class="p-5">
-              <h3 class="font-semibold">Amber Hagge, COTA/L</h3>
-              <p class="text-sm text-body">Certified Occupational Therapy Assistant</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img loading="lazy" src="https://alphapointe.org/wp-content/uploads/2024/11/Emily.jpg" alt="Emily Haapala, CVRT / O&M" class="w-full aspect-4-3 object-cover"/>
-            <div class="p-5">
-              <h3 class="font-semibold">Emily Haapala, CVRT / O&amp;M</h3>
-              <p class="text-sm text-body">Vision Rehabilitation Therapist &amp; Orientation &amp; Mobility Specialist</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/08/Lynda-Hansen.jpg" alt="Lynda Hansen, Orientation & Mobility Specialist" class="w-full aspect-4-3 object-cover"/>
-            <div class="p-5">
-              <h3 class="font-semibold">Lynda Hansen</h3>
-              <p class="text-sm text-body">Orientation &amp; Mobility Specialist</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/08/Mandy-1024x699.jpg" alt="Mandy Myers, Activities of Daily Living Instructor" class="w-full aspect-4-3 object-cover"/>
-            <div class="p-5">
-              <h3 class="font-semibold">Mandy Myers</h3>
-              <p class="text-sm text-body">Activities of Daily Living Instructor</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img loading="lazy" src="https://www.alphapointe.org/wp-content/uploads/2025/07/06.28.25-Burbach-36-A-2-1018x1024.jpg" alt="Julie Burbach, Vision Therapist" class="w-full aspect-4-3 object-cover"/>
-            <div class="p-5">
-              <h3 class="font-semibold">Julie Burbach</h3>
-              <p class="text-sm text-body">Vision Therapist</p>
-            </div>
-          </article>
-
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href="#contact" class="btn btn-primary">Meet Our Full Team</a>
         </div>
       </div>
     </section>
 
     <!-- Referral panel -->
-    <section id="refer" class="bg-tint">
-      <div class="max-w-6xl px-4 py-12" style="margin:0 auto">
-        <div class="card">
-          <h2 class="text-2xl font-semibold">Referrals for Clinicians &amp; Caregivers</h2>
-          <p class="mt-2 text-body">Use our secure online portal or send referrals by fax or phone. Include demographics, insurance, and the most recent exam note.</p>
-          <div class="mt-4" style="display:grid;gap:1rem;grid-template-columns:1fr;">
+    <section id="refer" class="bg-tint py-12">
+      <div class="max-w-6xl px-4" style="margin:0 auto">
+        <div class="card max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold">Referrals for Clinicians &amp; Caregivers</h2>
+          <p class="mt-4 text-body text-lg">Use our secure online portal or send referrals by fax or phone. Include demographics, insurance, and the most recent exam note.</p>
+          <div class="mt-6 grid md:grid-cols-3 gap-4">
             <a class="btn btn-primary" href="https://visionrefer.org/" target="_blank" rel="noopener noreferrer">VisionRefer (Secure)</a>
-            <a class="btn btn-outline" href="tel:+18162372020">Call 816‑237‑2020</a>
+            <a class="btn btn-accent" href="tel:+18162372020">Call 816‑237‑2020</a>
             <a class="btn btn-outline" href="fax:+18162372065">Fax 816‑237‑2065</a>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="max-w-6xl px-4 py-12" style="margin:0 auto">
+      <div class="section-header">
+        <h2 class="section-title">Our Locations</h2>
+        <p class="section-subtitle">Visit us at our Kansas City clinic or our Overland Park location for comprehensive vision services.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card">
+          <h3 class="text-xl font-semibold">Alphapointe Low Vision Clinic (Kansas City)</h3>
+          <p class="mt-2 text-body">7501 Prospect, Kansas City, MO 64132</p>
+          <p class="mt-1 text-body">Appointments: <a class="underline font-medium" href="tel:+18162372020">816‑237‑2020</a></p>
+          
+          <div class="map-placeholder mt-4">
+            <div class="text-center">
+              <div>📍</div>
+              <p>Interactive Map<br><span class="text-sm">(Would show location here)</span></p>
+            </div>
+          </div>
+          
+          <div class="mt-4 flex gap-3">
+            <a class="btn btn-outline" href="https://maps.google.com/?q=7501+Prospect+Kansas+City+MO+64132" target="_blank" rel="noopener noreferrer">Get Directions</a>
+            <a class="btn btn-primary" href="#contact">Contact This Location</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 class="text-xl font-semibold">KC Vision Performance (Overland Park)</h3>
+          <p class="mt-2 text-body">Operated by Alphapointe — comprehensive optometric &amp; neuro‑optometric services.</p>
+          
+          <div class="map-placeholder mt-4">
+            <div class="text-center">
+              <div>📍</div>
+              <p>Interactive Map<br><span class="text-sm">(Would show location here)</span></p>
+            </div>
+          </div>
+          
+          <div class="mt-4 flex gap-3">
+            <a class="btn btn-outline" href="https://kcvisionperformance.com/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+            <a class="btn btn-primary" href="#contact">Contact This Location</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-tint py-12">
+      <div class="max-w-6xl px-4" style="margin:0 auto">
+        <div class="card max-w-3xl mx-auto">
+          <h2 class="text-3xl font-bold">Request an Appointment</h2>
+          <p class="mt-2 text-body">Call <a class="underline font-medium" href="tel:+18162372020">816‑237‑2020</a> or send a message below. Our team will help you choose services and next steps.</p>
+          
+          <form id="contact-form" class="mt-6">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+              <div class="form-error" id="name-error">Please enter your name</div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="(###) ###-####" required>
+              <div class="form-error" id="phone-error">Please enter a valid phone number</div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com">
+              <div class="form-error" id="email-error">Please enter a valid email address</div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="message">How can we help?</label>
+              <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell us about your goals or challenges"></textarea>
+            </div>
+            
+            <div class="flex items-center gap-3">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+              <p class="text-xs text-body">Submitting this form does not share medical records. For referrals, please use VisionRefer or fax.</p>
+            </div>
+            
+            <div class="form-success" id="form-success">
+              Thank you for your message! We'll contact you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="max-w-6xl px-4 py-12" style="margin:0 auto">
+      <div class="section-header">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Find answers to common questions about our vision services and referral process.</p>
+      </div>
+      
+      <div class="grid gap-4 max-w-3xl mx-auto">
+        <details class="card">
+          <summary class="font-medium cursor-pointer text-lg">What is low vision rehabilitation?</summary>
+          <p class="mt-2 text-body">A personalized plan combining devices (like magnifiers) and training (like improved lighting and contrast) to help you do everyday tasks more independently.</p>
+        </details>
+        
+        <details class="card">
+          <summary class="font-medium cursor-pointer text-lg">Who qualifies for a low vision evaluation?</summary>
+          <p class="mt-2 text-body">People with 20/40 vision or worse in the better eye (with correction) or anyone struggling with daily visual tasks, contrast, scotomas, or peripheral loss.</p>
+        </details>
+        
+        <details class="card">
+          <summary class="font-medium cursor-pointer text-lg">How do I refer a patient?</summary>
+          <p class="mt-2 text-body">Use VisionRefer for secure online referral, or send via fax to 816‑237‑2065. You can also call 816‑237‑2020 for assistance.</p>
+        </details>
+        
+        <details class="card">
+          <summary class="font-medium cursor-pointer text-lg">Can I try devices before buying?</summary>
+          <p class="mt-2 text-body">Yes. Visit the Connecting Pointe store to test adaptive products and get free cane repair. Call 816‑237‑2040 for an appointment.</p>
+        </details>
+        
+        <details class="card">
+          <summary class="font-medium cursor-pointer text-lg">Where are services available?</summary>
+          <p class="mt-2 text-body">Kansas City (Low Vision Clinic, 7501 Prospect). KC Vision Performance (Overland Park) provides comprehensive optometric and neuro‑optometric services operated by Alphapointe.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border border-muted bg-ink text-white py-10">
+    <div class="max-w-6xl px-4" style="margin:0 auto">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <p class="font-semibold text-lg">Alphapointe</p>
+          <p class="mt-2 opacity-80">Empowering people with vision loss to achieve their goals and live independently.</p>
+        </div>
+        
+        <div>
+          <p class="font-semibold">Contact</p>
+          <ul class="mt-2 opacity-80" style="list-style:none;padding-left:0">
+            <li>Kansas City Clinic — 7501 Prospect, Kansas City, MO 64132</li>
+            <li>Appointments: <a class="underline" href="tel:+18162372020">816‑237‑2020</a></li>
+            <li>Fax: <a class="underline" href="fax:+18162372065">816‑237‑2065</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <p class="font-semibold">Quick links</p>
+          <ul class="mt-2 opacity-80" style="list-style:none;padding-left:0">
+            <li><a class="underline" href="#refer">VisionRefer / Referrals</a></li>
+            <li><a class="underline" href="#store">Connecting Pointe Store</a></li>
+            <li><a class="underline" href="#support-groups">Support Groups</a></li>
+            <li><a class="underline" href="#youth">Youth Events & Camps</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center opacity-70">
+        <p>© <span id="year"></span> Alphapointe — For demonstration build purposes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#main" class="back-to-top" aria-label="Back to top">↑</a>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+    
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    // Form validation
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Reset errors
+        document.querySelectorAll('.form-error').forEach(error => {
+          error.style.display = 'none';
+        });
+        
+        let isValid = true;
+        
+        // Name validation
+        const name = document.getElementById('name');
+        if (!name.value.trim()) {
+          document.getElementById('name-error').style.display = 'block';
+          isValid = false;
+        }
+        
+        // Phone validation
+        const phone = document.getElementById('phone');
+        const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        if (!phoneRegex.test(phone.value.replace(/\s/g, ''))) {
+          document.getElementById('phone-error').style.display = 'block';
+          isValid = false;
+        }
+        
+        // Email validation (optional)
+        const email = document.getElementById('email');
+        if (email.value && !/\S+@\S+\.\S+/.test(email.value)) {
+          document.getElementById('email-error').style.display = 'block';
+          isValid = false;
+        }
+        
+        if (isValid) {
+          // In a real implementation, you would send the form data to a server
+          // For this demo, we'll just show a success message
+          document.getElementById('form-success').style.display = 'block';
+          contactForm.reset();
+          
+          // Scroll to success message
+          document.getElementById('form-success').scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          // Close mobile menu if open
+          if (hamburger && navMenu) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+          
+          // Scroll to target
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
