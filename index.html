@@ -526,6 +526,7 @@
       border-bottom: 1px solid var(--ap-border);
       text-decoration: none;
       color: var(--ap-ink);
+      font-size: .875rem;
     }
     
     .nav-menu a:last-child {
@@ -546,6 +547,7 @@
       background: transparent;
       border: none;
       cursor: pointer;
+      padding: 0;
     }
     
     .hamburger span {
@@ -580,12 +582,13 @@
         flex-direction: row;
         box-shadow: none;
         padding: 0;
-        gap: 1.5rem;
+        gap: 2rem;
       }
       
       .nav-menu a {
         padding: 0.5rem 0;
         border-bottom: none;
+        font-size: .875rem;
       }
     }
     
@@ -723,15 +726,15 @@
   <!-- Header -->
   <header class="border border-muted bg-white sticky top-0 z-50" style="border-left:0;border-right:0;border-top:0;">
     <div class="max-w-6xl px-4 py-4 flex items-center justify-between" style="margin:0 auto">
-      <div class="flex items-center" style="gap:.75rem">
-        <img src="alphapointe_logo_transparent.png" alt="Alphapointe" class="logo-img"/>
-      </div>
-      
-      <button class="hamburger lg:hidden" aria-label="Toggle menu" aria-expanded="false">
+      <button class="hamburger lg:hidden" aria-label="Toggle menu" aria-expanded="false" style="order:-1;">
         <span></span>
         <span></span>
         <span></span>
       </button>
+      
+      <div class="flex items-center" style="gap:.75rem">
+        <img src="alphapointe_logo_transparent.png" alt="Alphapointe" class="logo-img"/>
+      </div>
       
       <nav aria-label="Primary" class="nav-menu">
         <a href="#services">Vision Services</a>
@@ -742,8 +745,7 @@
       </nav>
       
       <div class="hidden lg:flex items-center" style="gap:.5rem">
-        <a href="tel:+18162372020" class="btn btn-outline">Call 816‑237‑2020</a>
-        <a href="#refer" class="btn btn-primary">Refer a Patient</a>
+        <a href="#refer" class="btn btn-primary" style="font-size:.875rem;padding:.625rem 1rem;">Refer a Patient</a>
       </div>
     </div>
   </header>
